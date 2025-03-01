@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional E-Commerce Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      header {
+        background: #333;
+        color: white;
+        padding: 10px 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      nav .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .carousel {
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: auto;
+      }
+
+      .products {
+        padding: 20px;
+        background: #f9f9f9;
+      }
+
+      .products h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .product {
+        background: white;
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .product img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .product button {
+        background: #333;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        height: 50px; /* Fixed height for buttons */
+      }
+
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <script>
+      window.$zoho = window.$zoho || {};
+      $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+    </script>
+    <script
+      id="zsiqscript"
+      src="https://salesiq.zohopublic.in/widget?wc=siqea56c308e3e0248d9642d90bdac01c76e6fac4682a9f6572427f85bc67bd4d05"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">GenFusion</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="carousel">
+        <div class="carousel-item">
+          <img src="offer.jpg" alt="Slide 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/1200x500" alt="Slide 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/1200x500" alt="Slide 3" />
+        </div>
+      </section>
+      <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-list">
+          <div class="product">
+            <img src="product1.jpg" alt="Basketball" />
+            <h3>Samsung phone</h3>
+            <p>$10.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product2.jpg" alt="Iphone" />
+            <h3>Dell Inspiron</h3>
+            <p>$150.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product3.jpg" alt="Product 3" />
+            <h3>Samsung Smartwatch</h3>
+            <p>$200.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product4.jpg" alt="Product 4" />
+            <h3>Apple AirPods Pro</h3>
+            <p>$250.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product5.jpg" alt="Product 5" />
+            <h3>Samsung 55" 4K TV</h3>
+            <p>$300.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product6.jpg" alt="Product 6" />
+            <h3>Samsung French Door
+            </h3>
+            <p>$350.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product7.jpg" alt="Product 7" />
+            <h3>JBL Flip 5</h3>
+            <p>$400.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product8.jpg" alt="Product 8" />
+            <h3>LG Front Load Washer
+            </h3>
+            <p>$450.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product9.jpg" alt="Product 9" />
+            <h3>LG Split AC
+            </h3>
+            <p>$500.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product10.jpg" alt="Product 10" />
+            <h3>Anker PowerCore 10000
+            </h3>
+            <p>$550.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product11.jpg" alt="Product 11" />
+            <h3>Philips Norelco Multigroom 7000</h3>
+            <p>$600.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product12.jpg" alt="Product 12" />
+            <h3>Nike Air Max 270</h3>
+            <p>$650.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product14.jpg" alt="Product 13" />
+            <h3>Nike Dri-FIT</h3>
+            <p>$700.00</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="product15.jpg" alt="Product 14" />
+            <h3>Kookaburra Kahuna
+            </h3>
+            <p>$750.00</p>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 GenFusion. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".carousel").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        });
+      });
+    </script>
+  </body>
+  <script>
+    window.$zoho = window.$zoho || {};
+    $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+  </script>
+  <script
+    id="zsiqscript"
+    src="https://salesiq.zohopublic.in/widget?wc=siqea56c308e3e0248d9642d90bdac01c76e6fac4682a9f6572427f85bc67bd4d05"
+    defer
+  ></script>
+</html>

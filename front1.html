@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional E-Commerce Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .search-bar {
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .carousel {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .carousel-item img,
+        .carousel-item video {
+            width: 100%;
+            height: auto;
+        }
+
+        .recommendations, .products {
+            padding: 20px;
+            background: #f9f9f9;
+            margin: 20px 0;
+        }
+
+        .recommendations h2, .products h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            width: 250px; /* Adjusted width to fit more items */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+            flex-grow: 1;
+        }
+
+        .product p {
+            margin: 10px 0;
+        }
+
+        .product button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GenFusion</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search..." />
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="carousel">
+            <div class="carousel-item">
+                <video src="GEN FUSION 1.mp4" autoplay muted loop>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video src="GEN FUSION 2.mp4" autoplay muted loop>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video src="GEN FUSION 3.mp4" autoplay muted loop>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        <section class="recommendations">
+            <h2>Recommended for You</h2>
+            <div class="product-list">
+                <a href="phone - Copy.html" class="product">
+                    <img src="https://via.placeholder.com/300x300" alt="Recommended Product 1" />
+                    <h3>Recommended Product 1</h3>
+                    <p>$100.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="product2.html" class="product">
+                    <img src="https://via.placeholder.com/300x300" alt="Recommended Product 2" />
+                    <h3>Recommended Product 2</h3>
+                    <p>$150.00</p>
+                    <button>Add to Cart</button>
+                </a>
+            </div>
+        </section>
+        <section class="products">
+            <h2>Featured Products</h2>
+            <div class="product-list" id="productList">
+                <a href="phone - Copy.html" class="product" data-name="Samsung phone">
+                    <img src="product1.jpg" alt="Samsung phone" />
+                    <h3>Samsung phone</h3>
+                    <p>$10.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="laptop1.html" class="product" data-name="Dell Inspiron">
+                    <img src="product2.jpg" alt="Dell Inspiron" />
+                    <h3>Dell Inspiron</h3>
+                    <p>$150.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="smartwatch.html" class="product" data-name="Samsung Smartwatch">
+                    <img src="product3.jpg" alt="Samsung Smartwatch" />
+                    <h3>Samsung Smartwatch</h3>
+                    <p>$200.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="airpods.html" class="product" data-name="Apple AirPods Pro">
+                    <img src="product4.jpg" alt="Apple AirPods Pro" />
+                    <h3>Apple AirPods Pro</h3>
+                    <p>$250.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="tv.html" class="product" data-name="Samsung 55\" 4K TV">
+                    <img src="product5.jpg" alt="Samsung 55\" 4K TV" />
+                    <h3>Samsung 55" 4K TV</h3>
+                    <p>$300.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="fridge.html" class="product" data-name="Samsung French Door">
+                    <img src="product6.jpg" alt="Samsung French Door" />
+                    <h3>Samsung French Door</h3>
+                    <p>$350.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="mobilespeakers.html" class="product" data-name="JBL Flip 5">
+                    <img src="product7.jpg" alt="JBL Flip 5" />
+                    <h3>JBL Flip 5</h3>
+                    <p>$400.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="washing machine.html" class="product" data-name="LG Front Load Washer">
+                    <img src="product8.jpg" alt="LG Front Load Washer" />
+                    <h3>LG Front Load Washer</h3>
+                    <p>$450.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="ac.html" class="product" data-name="LG Split AC">
+                    <img src="product9.jpg" alt="LG Split AC" />
+                    <h3>LG Split AC</h3>
+                    <p>$500.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="powerbank.html" class="product" data-name="Anker PowerCore 10000">
+                    <img src="product10.jpg" alt="Anker PowerCore 10000" />
+                    <h3>Anker PowerCore 10000</h3>
+                    <p>$550.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="trimmer.html" class="product" data-name="Philips Norelco Multigroom 7000">
+                    <img src="product11.jpg" alt="Philips Norelco Multigroom 7000" />
+                    <h3>Philips Norelco Multigroom 7000</h3>
+                    <p>$600.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="shoes.html" class="product" data-name="Nike Air Max 270">
+                    <img src="product12.jpg" alt="Nike Air Max 270" />
+                    <h3>Nike Air Max 270</h3>
+                    <p>$650.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="shirts.html" class="product" data-name="Nike Dri-FIT">
+                    <img src="product14.jpg" alt="Nike Dri-FIT" />
+                    <h3>Nike Dri-FIT</h3>
+                    <p>$700.00</p>
+                    <button>Add to Cart</button>
+                </a>
+                <a href="cricket bats.html" class="product" data-name="Kookaburra Kahuna">
+                    <img src="product15.jpg" alt="Kookaburra Kahuna" />
+                    <h3>Kookaburra Kahuna</h3>
+                    <p>$750.00</p>
+                    <button>Add to Cart</button>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 GenFusion. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".carousel").slick({
+                dots: true,
+                infinite: true,          // Continuous loop
+                speed: 1000,             // Slow sliding speed (1000ms)
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,          // Enable autoplay
+                autoplaySpeed: 4000,     // Speed of autoplay in milliseconds (2 seconds delay between slides)
+            });
+        });
+    </script>
+    <script>
+        window.$zoho = window.$zoho || {};
+        $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+    </script>
+    <script
+        id="zsiqscript"
+        src="https://salesiq.zohopublic.in/widget?wc=siqea56c308e3e0248d9642d90bdac01c76e6fac4682a9f6572427f85bc67bd4d05"
+        defer
+    ></script>
+</body>
+</html>

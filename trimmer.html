@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Comparison</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: #fff;
+        }
+
+        .navbar-custom .navbar-brand:hover, .navbar-custom .nav-link:hover {
+            color: #ddd;
+        }
+
+        .navbar-custom .nav-item.active .nav-link {
+            color: #ddd;
+        }
+
+        .selected-product-section, .comparison-product {
+            margin-top: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 150px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .product h2 {
+            font-size: 1.25rem;
+            height: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .product-buttons {
+            margin-top: 10px;
+        }
+
+        .product-buttons button {
+            width: 100%;
+            margin-bottom: 10px;
+            height: 40px;
+        }
+
+        .selected-product-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .selected-product-section img {
+            max-width: 100%;
+            max-height: 300px;
+        }
+
+        .product-info {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .product-info h2, .product-info p, .product-info button {
+            text-align: left;
+        }
+
+        .product-info .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .star-rating {
+            font-size: 1.5rem;
+            color: gold;
+        }
+
+        .features {
+            margin-top: 10px;
+        }
+
+        .features ul {
+            list-style-type: disc;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .reviews {
+            margin-top: 20px;
+        }
+
+        .review {
+            margin-top: 10px;
+        }
+
+        .review p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <a class="navbar-brand" href="#">GenFusion</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline ml-auto">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="selected-product-section" class="selected-product-section"></div>
+        <div id="comparison-product" class="comparison-product row"></div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: 'Philips Norelco Multigroom 7000', category: 'trimmer', brand: 'Philips', batteryLife: '5 hours', price: 70, rating: 4.5, features: ['Multi-Grooming', 'Self-Sharpening Blades'], reviews: [{user: 'Anna', text: 'Versatile and reliable.'}, {user: 'John', text: 'Great value for money.'}], image: 't1.jpg' },
+            { id: 2, name: 'Wahl Stainless Steel Lithium Ion+', category: 'trimmer', brand: 'Wahl', batteryLife: '2 hours', price: 60, rating: 4.3, features: ['Lithium Ion Battery', 'Stainless Steel Blades'], reviews: [{user: 'Mia', text: 'Durable and efficient.'}, {user: 'Liam', text: 'Good performance but a bit noisy.'}], image: 't2.jpg' },
+            { id: 3, name: 'Braun MGK3980', category: 'trimmer', brand: 'Braun', batteryLife: '1 hour', price: 50, rating: 4.4, features: ['Adjustable Combs', 'Precision Trimmer'], reviews: [{user: 'Olivia', text: 'Compact and effective.'}, {user: 'James', text: 'Easy to use and clean.'}], image: 't3.jpg' },
+            { id: 4, name: 'Remington MB6850', category: 'trimmer', brand: 'Remington', batteryLife: '2 hours', price: 40, rating: 4.2, features: ['Turbo Mode', 'Washable'], reviews: [{user: 'Sophia', text: 'Affordable and good for basic grooming.'}, {user: 'William', text: 'Decent performance for the price.'}], image: 't4.jpg' },
+        ];
+
+        function displaySelectedProduct(product) {
+            const selectedProductSection = document.getElementById('selected-product-section');
+            selectedProductSection.innerHTML = `
+                <div>
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h2>${product.name}</h2>
+                    <p>Brand: ${product.brand}</p>
+                    <p>Battery Life: ${product.batteryLife}</p>
+                    <p>Price: $${product.price}</p>
+                    <div class="star-rating">${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 !== 0 ? '½' : ''}</div>
+                    <div class="features">
+                        <h3>Features:</h3>
+                        <ul>
+                            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="reviews">
+                        <h3>Customer Reviews:</h3>
+                        ${product.reviews.map(review => `<div class="review"><p><strong>${review.user}:</strong> ${review.text}</p></div>`).join('')}
+                    </div>
+                    <div class="buttons">
+                        <button class="btn btn-success" onclick="addToCart(${product.id})">Add to Cart</button>
+                        <button class="btn btn-primary" onclick="compareProduct(${product.id})">Compare</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function compareProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const comparisonProducts = products.filter(p => p.category === 'trimmer' && p.id !== product.id)
+                                               .sort((a, b) => (b.batteryLife.localeCompare(a.batteryLife)) || (a.price - b.price))
+                                               .slice(0, 3);
+
+            const comparisonProductDiv = document.getElementById('comparison-product');
+            comparisonProductDiv.innerHTML = '';
+
+            const selectedProductDiv = document.createElement('div');
+            selectedProductDiv.className = 'product col-md-3 d-flex flex-column';
+            selectedProductDiv.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="product-info">
+                    <h2>${product.name}</h2>
+                    <p>Brand: ${product.brand}</p>
+                    <p>Battery Life: ${product.batteryLife}</p>
+                    <p>Price: $${product.price}</p>
+                    <div class="star-rating">${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 !== 0 ? '½' : ''}</div>
+                </div>
+                <div class="product-buttons mt-auto">
+                    <button class="btn btn-success" onclick="addToCart(${product.id})">Add to Cart</button>
+                    <h3 class="mt-3">Selected Product</h3>
+                </div>
+            `;
+            comparisonProductDiv.appendChild(selectedProductDiv);
+
+            comparisonProducts.forEach(comparisonProduct => {
+                const comparisonDiv = document.createElement('div');
+                comparisonDiv.className = 'product col-md-3 d-flex flex-column';
+                comparisonDiv.innerHTML = `
+                    <img src="${comparisonProduct.image}" alt="${comparisonProduct.name}">
+                    <div class="product-info">
+                        <h2>${comparisonProduct.name}</h2>
+                        <p>Brand: ${comparisonProduct.brand}</p>
+                        <p>Battery Life: ${comparisonProduct.batteryLife}</p>
+                        <p>Price: $${comparisonProduct.price}</p>
+                        <div class="star-rating">${'★'.repeat(Math.floor(comparisonProduct.rating))}${comparisonProduct.rating % 1 !== 0 ? '½' : ''}</div>
+                    </div>
+                    <div class="product-buttons mt-auto">
+                        <button class="btn btn-success" onclick="addToCart(${comparisonProduct.id})">Add to Cart</button>
+                        <h3 class="mt-3">Comparison Product</h3>
+                    </div>
+                `;
+                comparisonProductDiv.appendChild(comparisonDiv);
+            });
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                alert(`${product.name} has been added to your cart.`);
+            }
+        }
+
+        // Initial display of a default product
+        window.onload = function() {
+            const defaultProduct = products.find(p => p.id === 1); // Change this ID to select a different default product
+            displaySelectedProduct(defaultProduct);
+        };
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
